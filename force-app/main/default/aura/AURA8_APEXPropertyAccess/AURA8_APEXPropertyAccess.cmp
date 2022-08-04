@@ -1,0 +1,47 @@
+<!--
+  @description       : AURA8 APEX Property access from AURA
+  @author            : Fatih SARI
+  @group             : 
+  @last modified on  : 08-04-2022
+  @last modified by  : Fatih SARI
+-->
+<aura:component controller="AURA8_AccountListServerController" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+
+<aura:attribute name="apexClass" type="Object" />
+<aura:handler name="init" value="{!this}" action="{!c.accountListClientController}" />
+
+<aura:attribute name="columns" type="List"/>
+
+<aura:attribute name="selectedRows" type="List" />
+
+<lightning:card footer="Card Footer" title="Hello">
+    <aura:set attribute="actions">
+        <lightning:button label="New"/>
+    </aura:set>
+    <p class="slds-p-horizontal_small">
+        {!v.apexClass.name}
+        {!v.apexClass.phoneNumber}
+        {!v.apexClass.industry}
+        {!v.apexClass.companyName}
+
+
+
+    </p>
+</lightning:card>
+
+<lightning:card>
+
+        <lightning:datatable
+                        aura:id="accountTable"
+                        keyField="id"
+                        data="{! v.apexClass.accountList }"
+                        columns="{! v.columns }"
+                        hideCheckboxColumn="false"                        
+                        onrowselection="{! c.updateRowSelection }"
+                    />
+
+
+             
+
+    </lightning:card>
+</aura:component>

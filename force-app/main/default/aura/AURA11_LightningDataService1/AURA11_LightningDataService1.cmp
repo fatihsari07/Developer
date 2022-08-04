@@ -1,0 +1,21 @@
+<!--
+  @description       : AURA11 - Lightning Data Service
+  @author            : Fatih SARI
+  @group             : 
+  @last modified on  : 08-04-2022
+  @last modified by  : Fatih SARI
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction">
+
+
+<aura:attribute name="recordId" type="String" />
+<aura:attribute name="record" type="Account" />
+
+<lightning:recordForm 
+recordId="{!v.recordId}" 
+objectApiName="Account" 
+layoutType="Compact" 
+columns="2"
+mode="edit" />
+
+</aura:component>

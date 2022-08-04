@@ -1,0 +1,27 @@
+<!--
+  @description       : LWC06 - Create Accout Record with Lightning Data Service without APEX
+  @author            : Fatih SARI
+  @group             : 
+  @last modified on  : 08-04-2022
+  @last modified by  : Fatih SARI
+-->
+<template>
+<lightning-card  variant="Narrow"  title={objectApiName} icon-name="standard:account">
+  <lightning-button-icon  icon-name="utility:down" variant="border-filled" alternative-text="Show More" slot="actions"></lightning-button-icon>
+  <p class="slds-p-horizontal_small">
+
+    <lightning-record-form 
+          object-api-name={objectApiName}
+          fields={fieldList}
+          onsuccess={handleAccountCreate}>
+
+    </lightning-record-form>
+
+
+
+
+
+  </p>
+  <p slot="footer">{objectApiName} Creation</p>
+</lightning-card>
+</template>
