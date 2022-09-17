@@ -57,9 +57,4 @@ System.debug('Trigger.operationType : '+ Trigger.operationType);
         }
 
     }
-                
-                
-                                            
-
-
 }
